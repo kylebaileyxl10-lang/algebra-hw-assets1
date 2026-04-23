@@ -1,13 +1,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './', // Makes sure your 3D assets load correctly
+  base: './', 
   build: {
     rollupOptions: {
-      input: 'index.html' // This kills the "Could not resolve src/index.ts" error
+      input: 'index.html' // This stops the "src/index.ts" crash
     }
-  },
-  server: {
-    open: '/index.html',
   }
 });
