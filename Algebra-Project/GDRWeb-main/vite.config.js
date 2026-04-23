@@ -1,11 +1,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: './', // Essential for textures to load on GitHub Pages
+  base: './', 
   build: {
-    outDir: 'dist',
     rollupOptions: {
-      input: 'index.html' // Tells Vite to start with your HTML file
+      input: 'index.html' 
     }
   },
   server: {
