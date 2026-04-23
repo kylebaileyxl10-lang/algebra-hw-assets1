@@ -5,7 +5,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
     plugins: [dts()],
     server: {
-        open: '/test/index.html',
+        open: '/index.html',
     },
     build: {
         lib: {
