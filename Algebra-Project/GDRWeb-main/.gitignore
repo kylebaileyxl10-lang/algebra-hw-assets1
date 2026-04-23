@@ -1,0 +1,9 @@
+node_modules/
+
+dist/
+
+test/bundle.js
+
+testing/
+
+package-lock.json
