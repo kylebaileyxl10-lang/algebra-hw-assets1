@@ -14,12 +14,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install and Build
-        run: |
-          cd Algebra-Project/GDRWeb-main
-          npm install
-          npm run build
-      - uses: actions/upload-pages-artifact@v3
+         - name: Install and Build
+           run: |
+            cd Algebra-Project/GDRWeb-main
+              npm install
+             npm run build
+           - uses: actions/upload-pages-artifact@v3
         with:
           path: './Algebra-Project/GDRWeb-main/dist'
   deploy:
