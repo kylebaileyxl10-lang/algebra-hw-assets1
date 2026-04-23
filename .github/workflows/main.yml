@@ -1,11 +1,14 @@
 name: Deploy to GitHub Pages
+
 on:
   push:
     branches: ["main"]
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,14 +17,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Install and Build
-        run: |
-          cd Algebra-Project/GDRWeb-main
-          npm install
-          npm run build
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./GDRWeb-main
+
+      - name: Build
+        run: npm run build
+        working-directory: ./GDRWeb-main
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: './Algebra-Project/GDRWeb-main/dist'
+          path: ./GDRWeb-main/dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
